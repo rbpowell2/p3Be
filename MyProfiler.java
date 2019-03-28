@@ -15,6 +15,8 @@
  */
 
 // Used as the data structure to test our hash table against
+import java.util.HashMap;
+import java.util.Map;
 import java.util.TreeMap;
 
 public class MyProfiler<K extends Comparable<K>, V> {
@@ -23,7 +25,7 @@ public class MyProfiler<K extends Comparable<K>, V> {
     TreeMap<K, V> treemap;
     
     public MyProfiler() {
-        TreeMap<Integer, String> treemap = new TreeMap<Integer, String>();
+        Map<Integer, String> treemap = new HashMap<Integer, String>();
         HashTable<Integer, String> hashtable = new HashTable<Integer, String>();
         
     }
@@ -49,7 +51,7 @@ public class MyProfiler<K extends Comparable<K>, V> {
     }
     
     public static void main(String[] args) {
-     //   try {
+       try {
             int numElements = Integer.parseInt(args[0]);
             
             MyProfiler<Integer, Integer> profile = new MyProfiler<Integer, Integer>();
@@ -64,10 +66,10 @@ public class MyProfiler<K extends Comparable<K>, V> {
             
             String msg = String.format("Inserted and retreived %d (key,value) pairs", numElements);
             System.out.println(msg);
-     //   }
-      //  catch (Exception e) {
-          //  System.out.println("Usage: java MyProfiler <number_of_elements>");
-          //  System.exit(1);
-       // }
+        }
+        catch (Exception e) {
+            System.out.println("Usage: java MyProfiler <number_of_elements>");
+            System.exit(1);
+        }
     }
 }
